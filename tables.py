@@ -1,5 +1,5 @@
 from db import engine
-from sqlalchemy import MetaData, Table, Column, Integer, String
+from sqlalchemy import MetaData, Table, Column, Integer, String, ForeignKey
 
 
 ## creating metadata
@@ -16,15 +16,26 @@ users = Table(
   Column("name", String(length=50), nullable=False),
   Column("email", String, nullable=False, unique=True),
   Column("phone", Integer, nullable=False, unique=True),
+  
 )
-address = Table(
-  "address",
+
+# relationship one to many users and post
+posts = Table(
+  "posts",
   metadata,
-  Column("id", Integer, primary_key=True),
-  Column("street", String(length=50), nullable=False),
-  Column("dist", String, nullable=False, unique=True),
-  Column("country", String, nullable=False, unique=True),
+   Column("id", Integer, primary_key=True),
+   Column("user_id", Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=True),
+   Column("title", String, nullable=False),
+   Column("content", String, nullable=False),
 )
+# address = Table(
+#   "address",
+#   metadata,
+#   Column("id", Integer, primary_key=True),
+#   Column("street", String(length=50), nullable=False),
+#   Column("dist", String, nullable=False, unique=True),
+#   Column("country", String, nullable=False, unique=True),
+# )
 
 
 ## Craeting Table in Database
