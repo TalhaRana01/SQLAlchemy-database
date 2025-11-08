@@ -28,6 +28,12 @@ posts = Table(
    Column("title", String, nullable=False),
    Column("content", String, nullable=False),
 )
+
+
+##---------------------------
+## Table as a practice
+##---------------------------
+
 # address = Table(
 #   "address",
 #   metadata,
