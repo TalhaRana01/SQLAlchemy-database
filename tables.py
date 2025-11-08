@@ -6,6 +6,11 @@ from sqlalchemy import MetaData, Table, Column, Integer, String, ForeignKey
 metadata = MetaData()
 
 
+
+## ---------------------
+## BASIC TOPICS PRACTICE
+## ---------------------
+
 ## Creating using Table
 ## import Metadata, table and Columns
 # User table
