@@ -19,14 +19,30 @@ users = Table(
   
 )
 
-# relationship one to many users and post
-posts = Table(
-  "posts",
+##--------------------
+# One to Many Relation
+##--------------------
+
+# posts = Table(
+#   "posts",
+#   metadata,
+#    Column("id", Integer, primary_key=True),
+#    Column("user_id", Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=True),
+#    Column("title", String, nullable=False),
+#    Column("content", String, nullable=False),
+# )
+
+
+##--------------------
+# One to One Relation
+##--------------------
+profile = Table(
+  "profile",
   metadata,
    Column("id", Integer, primary_key=True),
-   Column("user_id", Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=True),
-   Column("title", String, nullable=False),
-   Column("content", String, nullable=False),
+   Column("user_id", Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=True, unique=True),
+   Column("bio", String, nullable=False),
+   Column("address", String, nullable=False),
 )
 
 
