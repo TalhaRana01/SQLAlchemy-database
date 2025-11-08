@@ -8,4 +8,4 @@ create_tables()
 
 create_user("Talha Rana", "talharana01@gmail.com")
 
-# create_post(1, "Talha Rana AI Engineer", "This is a Talha Rana AL ML Engineer")
+create_post(1, "Talha Rana AI Engineer", "This is a Talha Rana AL ML Engineer")

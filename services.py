@@ -13,9 +13,9 @@ def create_user(name: str, email:str):
     conn.execute(stmt)
     conn.commit()
     
-# Insert or create post 
-# def create_post(user_id: int, title:str, content: str):
-#   with engine.connect() as conn:
-#     stmt = insert(posts).values(user_id=user_id, title=title, content=content)
-#     conn.execute(stmt)
-#     conn.commit()
+Insert or create post 
+def create_post(user_id: int, title:str, content: str):
+  with engine.connect() as conn:
+    stmt = insert(posts).values(user_id=user_id, title=title, content=content)
+    conn.execute(stmt)
+    conn.commit()
