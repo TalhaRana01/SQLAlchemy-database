@@ -13,9 +13,10 @@ create_tables()
 # Create Post
 # create_post(1, "Talha Rana AI Engineer", "This is a Talha Rana AL ML Engineer")
 # create_post(2, "Ali ahmed", "This is a businessmen")
+create_post(3, "Ahsan", "Hi Ahsan how are you")
 
 # Read single user data
 # print(get_user_by_id(1))
 
 # Read all users
-print(get_all_users())
+# print(get_all_users())
