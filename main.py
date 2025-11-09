@@ -1,5 +1,5 @@
 from tables import create_tables
-from services import create_user, create_post, get_user_by_id, get_all_users, get_post_by_user, get_all_post, update_user_email, update_post_title
+from services import create_user, create_post, get_user_by_id, get_all_users, get_post_by_user, get_all_post, update_user_email, update_post_title, delete_user, delete_post
 
 
 
@@ -28,6 +28,12 @@ create_tables()
 ##------------------------------------
 # update_user_email(1, "example@gmail.com")
 
+
+##------------------------------------
+# Delete User from User Table in DATABASE
+##------------------------------------
+# delete_user(2)
+
 ##------------------------------------
 # Create Post in Post Table in DATABASE
 ##------------------------------------
@@ -42,7 +48,15 @@ create_tables()
 # print(get_post_by_user(3))  # Get post by User ID
 
 
-update_post_title(1, "This is new updated title")
+##------------------------------------
+# Update Post in Post Table in DATABASE
+##------------------------------------
+# update_post_title(1, "first update title")
+
+##------------------------------------
+# Delete Post in Post Table in DATABASE
+##------------------------------------
+# delete_post(2)
 
 
 

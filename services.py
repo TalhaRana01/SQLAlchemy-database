@@ -27,6 +27,15 @@ def get_user_by_id(user_id: int):
     stmt = select(users).where(users.c.id == user_id)
     result = conn.execute(stmt).first()
     return result
+
+
+# Delete User
+def delete_user(user_id: int):
+  with engine.connect() as conn:
+    stmt = delete(users).where(users.c.id == user_id)
+    conn.execute(stmt)
+    conn.commit()
+    
   
 # Update User Email
 def update_user_email(user_id: int, new_email: str):
@@ -60,9 +69,17 @@ def get_post_by_user(user_id: int):
     return result
    
 
-# Update User Email
-def update_post_title(user_id: int, update_title: str):
+# Update Post title
+def update_post_title(post_id: int, update_title: str):
   with engine.connect() as conn:
-    stmt = update(posts).where(users.c.id == user_id).values(title=update_title)
+    stmt = update(posts).where(posts.c.id == post_id).values(title=update_title)
+    conn.execute(stmt)
+    conn.commit()
+    
+    
+# Delete Post
+def delete_post(post_id: int):
+  with engine.connect() as conn:
+    stmt = delete(posts).where(posts.c.id == post_id)
     conn.execute(stmt)
     conn.commit()
