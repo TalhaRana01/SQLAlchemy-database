@@ -5,6 +5,8 @@ from sqlalchemy import MetaData, Table, Column, Integer, String, ForeignKey
 ## creating metadata
 metadata = MetaData()
 
+
+# Create user Table in database
 users = Table(
   "users",
   metadata,
@@ -14,6 +16,7 @@ users = Table(
  
 )
 
+# Create post Table in database
 posts = Table(
   "posts",
   metadata,
@@ -91,7 +94,7 @@ posts = Table(
 # )
 
 
-## Craeting Table in Database
+## Es function sy database main table ban jaye ga
 
 def create_tables():
   metadata.create_all(engine)

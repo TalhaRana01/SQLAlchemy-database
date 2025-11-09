@@ -6,7 +6,7 @@ from sqlalchemy import insert, select, update, delete
 
 
 
-# Insert Or Create User
+# Es function sy DATABASE main User create hoga 
 def create_user(name: str, email:str):
   with engine.connect() as conn:
     stmt = insert(users).values(name=name, email=email)
