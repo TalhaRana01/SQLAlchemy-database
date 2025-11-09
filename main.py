@@ -17,5 +17,5 @@ create_tables()
 # Read single user data
 # print(get_user_by_id(1))
 
-
+# Read all users
 print(get_all_users())
