@@ -35,4 +35,12 @@ def get_all_users():
     stmt = select(users)
     result = conn.execute(stmt).fetchall()
     return result
+  
+# Get Post by User
+
+def get_post_by_user(user_id: int):
+  with engine.connect() as conn:
+    stmt = select(posts).where(posts.c.user_id == user_id)
+    result = conn.execute(stmt).fetchall()
+    return result
    

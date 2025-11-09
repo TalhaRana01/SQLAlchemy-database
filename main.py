@@ -1,5 +1,5 @@
 from tables import create_tables
-from services import create_user, create_post, get_user_by_id, get_all_users
+from services import create_user, create_post, get_user_by_id, get_all_users, get_post_by_user
 
 
 
@@ -13,10 +13,15 @@ create_tables()
 # Create Post
 # create_post(1, "Talha Rana AI Engineer", "This is a Talha Rana AL ML Engineer")
 # create_post(2, "Ali ahmed", "This is a businessmen")
-create_post(3, "Ahsan", "Hi Ahsan how are you")
+# create_post(3, "Ahsan", "Hi Ahsan how are you")
 
 # Read single user data
 # print(get_user_by_id(1))
 
 # Read all users
 # print(get_all_users())
+
+
+# Get Post by User
+
+print(get_post_by_user(3))
