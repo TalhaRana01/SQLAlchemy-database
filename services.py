@@ -28,6 +28,13 @@ def get_user_by_id(user_id: int):
     result = conn.execute(stmt).first()
     return result
   
+# Update User Email
+def update_user_email(user_id: int, new_email: str):
+  with engine.connect() as conn:
+    stmt = update(users).where(users.c.id == user_id).values(email=new_email)
+    conn.execute(stmt)
+    conn.commit()
+    
   
 # Create Post
 def create_post(user_id: int, title:str, content: str):
@@ -52,3 +59,10 @@ def get_post_by_user(user_id: int):
     result = conn.execute(stmt).fetchall()
     return result
    
+
+# Update User Email
+def update_post_title(user_id: int, update_title: str):
+  with engine.connect() as conn:
+    stmt = update(posts).where(users.c.id == user_id).values(title=update_title)
+    conn.execute(stmt)
+    conn.commit()
